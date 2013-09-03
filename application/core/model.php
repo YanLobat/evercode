@@ -2,7 +2,7 @@
 
 class Model
 {
-	
+	public $db;
 	/*
 		Модель обычно включает методы выборки данных, это могут быть:
 			> методы нативных библиотек pgsql или mysql;
@@ -11,7 +11,10 @@ class Model
 			> методы для работы с NoSQL;
 			> и др.
 	*/
-
+	function __construct()
+	{
+		$this->db=new Sql();
+	}
 	// метод выборки данных
 	public function get_data()
 	{
