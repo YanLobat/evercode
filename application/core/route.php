@@ -75,8 +75,14 @@ class Route
 		}
 		else
 		{
+			if(method_exists($controller, $action_default)) 
+			{
+				$controller->$action_default();
+			}
+			else{
 			// здесь также разумнее было бы кинуть исключение
 			Route::ErrorPage404();
+			}
 		}
 	
 	}

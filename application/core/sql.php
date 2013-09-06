@@ -15,11 +15,11 @@
  	}
  	function add($name,$date,$text)
  	{
- 		$sql=$this->db->prepare("INSERT INTO posts VALUES(:name,:date,:text)");
- 		$sql->bindParam(':name',$name,PDO::PARAM_STR);
- 		$sql->bindParam(':date',$date,PDO::PARAM_STR);
+ 		$sql=$this->db->prepare("INSERT INTO posts VALUES(?,?,?)");
+ 		$sql->bindParam(1,$name,PDO::PARAM_STR);
+ 		$sql->bindParam(2,$date,PDO::PARAM_STR);
  		$text=str_replace("\r\n", "<br>", $text);
- 		$sql->bindParam(':text',$text,PDO::PARAM_STR);
+ 		$sql->bindParam(3,$text,PDO::PARAM_STR);
  		$sql->execute();
  	}
  	function update($id,$name,$text)
