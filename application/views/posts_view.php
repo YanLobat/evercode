@@ -1,11 +1,14 @@
 <h1>Мой уютненький бложик</h1>
 <?php    
-	echo $data[0]['name'];
+	foreach ($data as $post)
+	{
+	echo $post['name'];
 	echo "<br>";
-	echo $data[0]['date'];
+	echo $post['date'];
 	echo "<br>";
-	echo $data[0]['text'];
+	echo $post['text'];
 	echo "<br>";
+}
 ?>
 <br/>
 

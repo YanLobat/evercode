@@ -15,7 +15,7 @@
  	}
  	function add($name,$date,$text)
  	{
- 		$sql=$this->db->prepare("INSERT INTO posts VALUES(?,?,?)");
+ 		$sql=$this->db->prepare("INSERT INTO `evercode`.`posts` (`name`, `date`, `text`, `id`) VALUES (?,?, ?, NULL);");
  		$sql->bindParam(1,$name,PDO::PARAM_STR);
  		$sql->bindParam(2,$date,PDO::PARAM_STR);
  		$text=str_replace("\r\n", "<br>", $text);
