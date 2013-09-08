@@ -10,3 +10,4 @@ class Model_Add extends Model
 		return $data;
 	}
 };
+?>

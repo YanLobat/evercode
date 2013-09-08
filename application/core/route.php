@@ -77,7 +77,7 @@ class Route
 		{
 			if(method_exists($controller, $action_default)) 
 			{
-				$controller->$action_default();
+				$controller->$action();
 			}
 			else{
 			// здесь также разумнее было бы кинуть исключение
