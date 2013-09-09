@@ -1,6 +1,8 @@
-echo $data['name'];
+<?php
+	echo $data[0]['name'];
 	echo "<br>";
-	echo $data['date'];
+	echo $data[0]['date'];
 	echo "<br>";
-	echo $data['text'];
+	echo $data[0]['text'];
 	echo "<br>";
+	?>

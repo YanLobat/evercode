@@ -33,11 +33,11 @@ class Route
 		$controller_name = 'Controller_'.$controller_name;
 		$action_name = 'action_'.$action_name;
 
-		/*
-		echo "Model: $model_name <br>";
+		
+		/*echo "Model: $model_name <br>";
 		echo "Controller: $controller_name <br>";
-		echo "Action: $action_name <br>";
-		*/
+		echo "Action: $action_name <br>";*/
+		
 
 		// подцепляем файл с классом модели (файла модели может и не быть)
 
@@ -55,6 +55,7 @@ class Route
 		{
 			include "application/controllers/".$controller_file;
 		}
+
 		else
 		{
 			/*
@@ -75,9 +76,10 @@ class Route
 		}
 		else
 		{
+			$action_default='action_default';
 			if(method_exists($controller, $action_default)) 
 			{
-				$controller->$action();
+				$controller->$action_default();
 			}
 			else{
 			// здесь также разумнее было бы кинуть исключение

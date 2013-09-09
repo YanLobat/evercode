@@ -8,8 +8,9 @@
 	echo "<br>";
 	echo $post['text'];
 	echo "<br>";
+	echo $post['id'];
 	?>
-	<a href="/post/".$post['id'].>ссылка</a>
+	<a href="/post/<?php echo $post['id'] ?>">pruf</a>
 	<?php
 }
 ?>
